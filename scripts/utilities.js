@@ -15,3 +15,11 @@ function getRandomNumber() {
     // console.log(index, setAlphabetsToIndex)
      return setAlphabetsToIndex;
 }
+
+// set color to the keybord
+
+function setColor(elementId) {
+    const getId = document.getElementById(elementId);
+    getId.classList.add('bg-orange-400')
+    
+}
