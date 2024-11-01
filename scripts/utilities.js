@@ -26,3 +26,24 @@ function removeColor(e) {
     const getId = document.getElementById(e);
     getId.classList.remove('bg-orange-400')
 }
+
+// function for score page
+
+function scoreShow(e) {
+    const getForScorePage = document.getElementById(e);
+    getForScorePage.classList.remove('hidden');
+    const getIdForPlayGround = document.getElementById('play-ground');
+    getIdForPlayGround.classList.add('hidden');
+}
+
+
+// restert game funtion
+function restartGame() {
+    const getForScorePage = document.getElementById('score-page');
+    getForScorePage.classList.add('hidden');
+    const getIdForPlayGround = document.getElementById('play-ground');
+    getIdForPlayGround.classList.remove('hidden');
+    document.getElementById('life-id').innerText = 5;
+    document.getElementById('score-id').innerText =0;
+};
+

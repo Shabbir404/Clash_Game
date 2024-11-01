@@ -4,23 +4,46 @@
     console.log('player pressed ', playerPressed);
 
     // expected key press
-
     const currentAlphaEliment = document.getElementById('current-alphabet');
     const innerTextGet = currentAlphaEliment.innerText;
     const expectedWordCase = innerTextGet.toLowerCase();
 
-    // cheeking macthed or not
-
+     // cheeking macthed or not
     if (expectedWordCase === playerPressed) {
-        console.log('you did it');
+        // console.log('you did it');
+
+     //setting score update mathod and logic
+       const scoreIdFinder = document.getElementById('score-id');
+       const getScoreInNmber = parseInt(scoreIdFinder.innerText);
+       const scoreUpdate = getScoreInNmber+1;
+       scoreIdFinder.innerText = scoreUpdate;
         Play();
         removeColor(playerPressed);
     }
     else{
+       const lifeIdFinder = document.getElementById('life-id');
+       const getLifeInNmber = parseInt(lifeIdFinder.innerText);
+       const lifeCut = getLifeInNmber- 1;
+       lifeIdFinder.innerText = lifeCut;
        console.log('try again! ')
-    }
-//   console.log(expectedWordCase, playerPressed);
-      }
+       }
+
+       const restertScore = document.getElementById('life-id');
+       const getLifeInNmber = parseInt(restertScore.innerText);
+    // set the score in the result page.
+       if (getLifeInNmber === 0) {
+          scoreShow('score-page');
+          const finnalScoreSet = document.getElementById('result-score');        
+          const scoreIdFinder = document.getElementById('score-id');
+          const getScoreInNmber = parseInt(scoreIdFinder.innerText);
+          finnalScoreSet.innerText = getScoreInNmber;
+          
+         }
+      
+ }
+
+
+
 document.addEventListener('keyup', keybordEvent);
 
 function Play() {
