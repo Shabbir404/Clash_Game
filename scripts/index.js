@@ -2,6 +2,10 @@
   function keybordEvent (e){
     const playerPressed = e.key;
     console.log('player pressed ', playerPressed);
+    if (playerPressed === '!') {
+      location.reload();
+    }
+   
 
     // expected key press
     const currentAlphaEliment = document.getElementById('current-alphabet');
